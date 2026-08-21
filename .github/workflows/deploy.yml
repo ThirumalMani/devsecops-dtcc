@@ -22,7 +22,7 @@ jobs:
       # Step 1: Checkout the repository
       - name: Checkout Code
         uses: actions/checkout@v7
-        
+  
       - name: trufflehog-actions-scan
         uses: edplato/trufflehog-actions-scan@master
         continue-on-error: false

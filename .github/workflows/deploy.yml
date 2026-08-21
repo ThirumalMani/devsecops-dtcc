@@ -22,9 +22,10 @@ jobs:
       # Step 1: Checkout the repository
       - name: Checkout Code
         uses: actions/checkout@v7
-      - name: Upload to DefectDojo
-        env:
-          TOKEN: ${{ secrets.DEFECTDOJO_API_KEY }}
-        run: |
-          curl -H "Authorization: Token $TOKEN" "$DEFECTDOJO_URL/api/v2/products/"
+        
+      - name: trufflehog-actions-scan
+        uses: edplato/trufflehog-actions-scan@master
+        continue-on-error: false
+        with:
+          scanArguments: "--regex --entropy=False --max_depth=5 --rules /regexes.json"
 

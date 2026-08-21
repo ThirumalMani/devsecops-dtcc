@@ -22,11 +22,12 @@ jobs:
       # Step 1: Checkout the repository
       - name: Checkout Code
         uses: actions/checkout@v7
-
+        
       - name: Upload to DefectDojo
         env:
           TOKEN: ${{ secrets.DEFECTDOJO_API_KEY }}
         run: |
           curl -H "Authorization: Token $TOKEN" "$DEFECTDOJO_URL/api/v2/products/"
+          
 
 

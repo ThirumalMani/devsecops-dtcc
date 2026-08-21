@@ -27,7 +27,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.DEFECTDOJO_API_KEY }}
         run: |
-          curl -H "Authorization: Token $TOKEN" "$DEFECTDOJO_URL/api/v2/products/"
+          curl -H "Authorization: Token $TOKEN" "$DEFECTDOJO_URL/api/v2/products/" 
           
 
 

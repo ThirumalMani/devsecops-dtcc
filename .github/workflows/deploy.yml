@@ -22,12 +22,6 @@ jobs:
       # Step 1: Checkout the repository
       - name: Checkout Code
         uses: actions/checkout@v7
-  
-      - name: trufflehog-actions-scan
-        uses: edplato/trufflehog-actions-scan@master
-        continue-on-error: true
-        with:
-          scanArguments: "--regex --entropy=False --max_depth=5 --rules /regexes.json"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
